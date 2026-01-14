@@ -1,0 +1,125 @@
+==== Visit Report for 08/20/2025 12:59:32 ====
+Tech Name: KOB
+Trip Number: 16
+Local Time: 08/20/2025 12:59:32
+GMT: 08/20/2025 17:59:32
+Length of Visit: 00:00:09
+
+==== Station Info ====
+Station Name: 02EBX13
+Station Description: BIG EST RIVER NEAR HUNTSVILLE (PROJECT)
+Logger Model: H1-RS-G6-TLM
+Logger Version: 2
+Serial Number: 106691, Mfg Date: 02/26/2019
+OS Version: 3.11
+Software Version: 3.11.0.14, Firmware Version: 18
+Latitude: 45°23'33.3"N, Longitude: 79°09'36.7"W, Elevation: 309.600 m
+Installed Dlls: 
+  - AmModDll.dll (v3.11.0.14, 01/29/2018)
+  - TavisDll.dll (v3.11.0.14, 01/29/2018)
+  - RmyWind.dll (v3.11.0.14, 01/29/2018)
+  - DigiTemp.dll (v3.11.0.14, 01/29/2018)
+  - CSciSnowSensor.dll (v3.11.0.14, 01/29/2018)
+  - WindSonic.dll (v3.11.0.14, 01/29/2018)
+  - RadarSensor.dll (v3.11.0.14, 01/29/2018)
+  - Bubbler.dll (v3.11.0.14, 01/29/2018)
+  - SDI_THS.dll (v3.11.0.14, 01/29/2018)
+
+==== Rain Sensor Info ====
+
+==== Power Supply Info ====
+Battery Voltage: 12.9V
+Battery Current: 0.0A
+Battery Temperature: 19.0C
+Solar Panel Voltage: 0.1V
+Solar Panel Current: 0.0A
+Logger Case Temperature: 19.5C
+V Cut-off: 10.8V
+V Resume: 11.5V
+
+==== Sensor Serial Number Table ====
+Rain				
+ATMOS				
+ADVM9				
+G6 Port A			19070086	10/27/2021 11:07:14
+HG3				
+
+==== Telemetry Info ====
+
+Telemetry A
+Device Type: G6
+Power Management - V Cut-off: 10.8V, V Resume: 11.5V
+Satellite Network: GOES
+NESID: 48307E44
+Standard: CS2
+Serial#: 19070086
+SW Ver: 11.11 2018/12/06
+Format: WSC
+Channel: 221
+Bit Rate: 300
+Window Length: 15
+Interval: 01:00:00
+Offset: 00:23:30
+Antenna: Not Available
+Antenna Bearing: 174° True
+Antenna Inclination: 38°
+GPS Fix Interval: 00:00:00
+Failsafe: OK
+GPS Time of Fix: 08/20/2025 08:41:37
+Last Transmission Status: Self Timed Tx of 510 bytes
+Start Time: 08/20/2025 12:23:30
+End Time: 08/20/2025 12:23:44
+F-OCXO: 9999999.7241F-32kHz Clk: 32767.9510907
+Fwd Pwr: 38dBm
+Refl Pwr: 10dBm
+SWR Ratio: 1.08
+Power Supply: 12.2V
+
+Telemetry B
+Device Type: FTS
+Power Management - V Cut-off: 10.8V, V Resume: 11.5V
+Baud rate: 9600
+Data: 8 bit
+Parity: None
+Stop: 1 bit
+Flow control: None
+Power Cycle Settings: Off
+
+==== Current Conditions ====
+HG9: 5.062 m
+HG9_raw: 6.452 m
+TW9: 18.7 C
+SS9: 2 
+WVX9: 0.097 m/s
+YIP9: 1.0 degrees
+YIR9: 2.4 degrees
+ID9: 0 
+HD9: 0.952 m
+YE9: 0.889 m
+YSN9: 40.3 dBm
+TA: 18.6 Celsius
+XR: 77 %
+PA: 98.47 kPa
+VB: 12.9 V
+YF: 38.2 dBm
+YR: 10.1 dBm
+HG3: 5.063 m
+
+==== Detected SDI-12 Sensors ====
+ATMOS - Address: 0, Port: B
+	013METER   ATM14 104
+
+HG3 - Address: 3, Port: B
+	313OTT HACH   PLS110PS-453498
+
+ADVM9 - Address: 9, Port: A
+	913SonTek  IQ    310IQ1842008
+
+
+==== Data ====
+Capacity: 542 Days
+Oldest Data: 11/22/2024 17:23:30
+Newest Data: 08/20/2025 12:55:00
+Estimated Overwrite: Currently overwriting
+
+==== Additional Notes ====

@@ -698,7 +698,6 @@ section.versions
 				<td><xsl:value-of select="@Analog1Mode" /></td>
 				<td><xsl:value-of select="@Analog1Name" /></td>				
 				<td><xsl:value-of select="@Analog1Range" /></td>
-				<td rowspan="4"><a href="https://ftsinc.com/wp-content/uploads/2015/07/Axiom-Analog-Interface-Module.jpg" target="_blank"><img src="https://ftsinc.com/wp-content/uploads/2015/07/Axiom-Analog-Interface-Module.jpg" width="125" alt="FTS SDI-AM - please connect to the internet to see the photo"/></a></td>
 			</tr>
 			<tr>
 				<td>2</td>
@@ -945,10 +944,8 @@ section.versions
 
 <section class="versions">
 <article>
-	
+	<p> Water Survey of Canada - 	Style Sheet Version 2.3 - 2018-12-05</p>
 	<p>Created from: <div id="file"></div> on <div id="curtime"></div></p>
-		
-	<p> Water Survey of Canada - 	Style Sheet Version 2.2 - 2018-12-05</p>
 	
 	<script>		
 		document.getElementById("curtime").innerHTML = Date();

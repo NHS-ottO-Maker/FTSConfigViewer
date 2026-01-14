@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XMLRoot>
+  <TimeZoneInfo Bias="300">
+    <StandardTime Name="Eastern Standard Time" Year="0" Month="0" DayOfWeek="0" Day="1" Hour="2" Minute="0" Second="0" Millisecond="0" Bias="0" />
+    <DaylightTime Name="Eastern Daylight Time" Year="0" Month="0" DayOfWeek="0" Day="2" Hour="2" Minute="0" Second="0" Millisecond="0" Bias="-60" />
+  </TimeZoneInfo>
+  <Sensors>
+    <Battery SensorType="BatterySensor" SensorOn="Y" LoggerID="" BvName="VB" BiName="IBatt" BtName="TBatt" BtUnits="C" BDvName="" />
+    <SDI>
+      <Cmd0>
+        <TA FieldUnits="Celsius" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="2" />
+        <PA FieldUnits="kPa" FieldPrecision="2" FieldFactor="1" FieldOffset="0" FieldNum="4" />
+        <XR FieldUnits="%" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="3" />
+      </Cmd0>
+    </SDI>
+    <ATMOS SensorType="SDISensor" SensorOn="Y" Address="0" LoggerID="" Port="B" HardwareID="METER ATM14  ">
+      <Cmd0 CmdName="M" CmdInterval="900" CmdOffset="0" CmdNumberOfSamples="0" CmdSamplePeriod="0" CondEnabled="N" CondConst="0" CondOperator="&gt;" CondType="Value" CondVariable="">
+        <TA FieldUnits="Celsius" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="2" />
+        <PA FieldUnits="kPa" FieldPrecision="2" FieldFactor="1" FieldOffset="0" FieldNum="4" />
+        <XR_dec FieldUnits="" FieldPrecision="2" FieldFactor="1" FieldOffset="0" FieldNum="3" />
+      </Cmd0>
+    </ATMOS>
+    <HG3 SensorType="StageSensor" SensorOn="Y" Address="3" LoggerID="" Port="B" HardwareID="OTTHACH PLS PS-453498 " StageName="HG3" StageOffsetName="HG3_offset" RawStageName="HG3_raw" TempName="TW3" StageUnits="m" StageDisplayUnits="m" UseStageCmd="Y" UseCS450Equation="N" SIGravity="9.80665" SIWaterDensity="1000" UnitMultiplier="1">
+      <Cmd0 CmdName="M" CmdInterval="300" CmdOffset="270" CmdNumberOfSamples="0" CmdSamplePeriod="0" CmdType="StageCommand" CondEnabled="N" CondConst="0" CondOperator="&gt;" CondType="Value" CondVariable="">
+        <HG3_raw FieldUnits="m" FieldPrecision="3" FieldFactor="1" FieldOffset="0" FieldNum="1" />
+        <TW3 FieldUnits="C" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="2" />
+        <HG3 FieldUnits="m" FieldPrecision="3" FieldFactor="1" FieldOffset="4.2108" FieldNum="1" />
+      </Cmd0>
+    </HG3>
+    <ADVM9 SensorType="SDISensor" SensorOn="Y" Address="9" LoggerID="" Port="A" HardwareID="SonTek IQ IQ1842008 ">
+      <Cmd7 CmdName="M" CmdInterval="900" CmdOffset="0" CmdNumberOfSamples="0" CmdSamplePeriod="0" CondEnabled="N" CondConst="0" CondOperator="&gt;" CondType="Value" CondVariable="">
+        <TW9 FieldUnits="C" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="8" />
+        <SS9 FieldUnits="" FieldPrecision="0" FieldFactor="1" FieldOffset="0" FieldNum="9" />
+        <HG9_raw FieldUnits="m" FieldPrecision="3" FieldFactor="1" FieldOffset="0" FieldNum="2" />
+      </Cmd7>
+      <Cmd9 CmdName="M2" CmdInterval="900" CmdOffset="600" CmdNumberOfSamples="0" CmdSamplePeriod="0" CondEnabled="N" CondConst="0" CondOperator="&gt;" CondType="Value" CondVariable="">
+        <HD9 FieldUnits="m" FieldPrecision="3" FieldFactor="1" FieldOffset="0" FieldNum="1" />
+        <YE9 FieldUnits="m" FieldPrecision="3" FieldFactor="1" FieldOffset="0" FieldNum="5" />
+        <YSN9 FieldUnits="dBm" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="6" />
+      </Cmd9>
+      <Cmd8 CmdName="M1" CmdInterval="900" CmdOffset="300" CmdNumberOfSamples="0" CmdSamplePeriod="0" CondEnabled="N" CondConst="0" CondOperator="&gt;" CondType="Value" CondVariable="">
+        <WVX9 FieldUnits="m/s" FieldPrecision="3" FieldFactor="1" FieldOffset="0" FieldNum="1" />
+        <YIP9 FieldUnits="degrees" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="6" />
+        <YIR9 FieldUnits="degrees" FieldPrecision="1" FieldFactor="1" FieldOffset="0" FieldNum="7" />
+        <ID9 FieldUnits="" FieldPrecision="0" FieldFactor="1" FieldOffset="0" FieldNum="9" />
+      </Cmd8>
+    </ADVM9>
+  </Sensors>
+  <Processes>
+    <XR ProcessType="FuncProcess" Units="%" Equation="XR_dec*100" Precision="0" ProcessOrder="-1" />
+    <HG9 ProcessType="FuncProcess" Units="m" Equation="HG9_raw-1.390" Precision="3" ProcessOrder="-1" />
+  </Processes>
+  <Loggers>
+    <Logger3 LoggerName="LOG(VB YF YR)" LoggerInterval="3600" LoggerOffset="0" IsInline="False" LoggerCondEnabled="False" LoggerCondConst="0" LoggerCondOperator="&gt;" LoggerCondType="Value" LoggerCondVariable="Elev">
+      <VB DpEnabled="Y" />
+      <YF DpEnabled="Y" />
+      <YR DpEnabled="Y" />
+    </Logger3>
+    <Logger1 LoggerName="LOG(SS9 YIP9 YIR9 ID9 YE9 YSN9 HD9)" LoggerInterval="3600" LoggerOffset="0" IsInline="False" LoggerCondEnabled="False" LoggerCondConst="0" LoggerCondOperator="&gt;" LoggerCondType="Value" LoggerCondVariable="Elev">
+      <SS9 DpEnabled="Y" />
+      <YIP9 DpEnabled="Y" />
+      <YIR9 DpEnabled="Y" />
+      <ID9 DpEnabled="Y" />
+      <YE9 DpEnabled="Y" />
+      <YSN9 DpEnabled="Y" />
+      <HD9 DpEnabled="Y" />
+    </Logger1>
+    <Logger4 LoggerName="LOG(HG3 HG9)" LoggerInterval="300" LoggerOffset="0" IsInline="False" LoggerCondEnabled="False" LoggerCondConst="0" LoggerCondOperator="&gt;" LoggerCondType="Value" LoggerCondVariable="Elev">
+      <HG3 DpEnabled="Y" />
+      <HG9 DpEnabled="Y" />
+    </Logger4>
+    <Logger2 LoggerName="LOG(TA XR PA TW9 TW3 WVX9)" LoggerInterval="900" LoggerOffset="0" IsInline="False" LoggerCondEnabled="False" LoggerCondConst="0" LoggerCondOperator="&gt;" LoggerCondType="Value" LoggerCondVariable="Elev">
+      <TA DpEnabled="Y" />
+      <XR DpEnabled="Y" />
+      <PA DpEnabled="Y" />
+      <TW9 DpEnabled="Y" />
+      <TW3 DpEnabled="Y" />
+      <WVX9 DpEnabled="Y" />
+    </Logger2>
+  </Loggers>
+  <SaveData DateFormat="yyyy/MM/dd HH:mm:ss" LastVisit="1/24/2025 1:57:00 PM" DateRange="Last Visit" SelectedDataset="N" BlankField="-99999" />
+  <Telems>
+    <Telem0 TelemType="G6">
+      <G6 SatelliteNetwork="GOES" NesID="48307E44" Standard="CS2" Satellite="EAST" MsgFormat="WSC" GPSFixInterval="0" PowerLevel100bps="32" PowerLevel300bps="37" PowerLevel1200bps="38" SelfTimedEnabled="Y" SelfTimedInterval="3600" SelfTimed1stTrans="1410" SelfTimedBitrate="300" SelfTimedWin="15" SelfTimedChannel="221" SelfTimedEmpMsg="Y" SelfTimedTxDataFormat="A" SelfTimedMsgCenter="Y" RandomEnabled="N" RandomBitrate="300" RandomChannel=" " RandomRepeatCount="0" TxEnabled="Y" FwrPwr="YF" RflPwr="YR" SWR="SWR" VLoad="YB" ManTimeMeasurement="Y">
+        <SelfTimed>
+          <WSC>
+            <WSC2 Interval="3600" Offset="0" Order="4" Input="SS9" Alias="SS9" RedundantRecs="0" />
+            <WSC4 Interval="3600" Offset="0" Order="5" Input="YIP9" Alias="YIP9" RedundantRecs="0" />
+            <WSC5 Interval="3600" Offset="0" Order="6" Input="YIR9" Alias="YIR9" RedundantRecs="0" />
+            <WSC6 Interval="3600" Offset="0" Order="7" Input="ID9" Alias="ID9" RedundantRecs="0" />
+            <WSC8 Interval="3600" Offset="0" Order="8" Input="YE9" Alias="YE9" RedundantRecs="0" />
+            <WSC9 Interval="3600" Offset="0" Order="9" Input="YSN9" Alias="YSN9" RedundantRecs="0" />
+            <WSC10 Interval="900" Offset="0" Order="10" Input="TA" Alias="TA" RedundantRecs="0" />
+            <WSC11 Interval="900" Offset="0" Order="11" Input="XR" Alias="XR" RedundantRecs="0" />
+            <WSC12 Interval="900" Offset="0" Order="12" Input="PA" Alias="PA" RedundantRecs="0" />
+            <WSC13 Interval="3600" Offset="0" Order="13" Input="VB" Alias="VB" RedundantRecs="0" />
+            <WSC14 Interval="3600" Offset="0" Order="14" Input="YF" Alias="YF" RedundantRecs="0" />
+            <WSC15 Interval="3600" Offset="0" Order="15" Input="YR" Alias="YR" RedundantRecs="0" />
+            <WSC16 Interval="300" Offset="0" Order="0" Input="WVX9" Alias="" RedundantRecs="0" />
+            <WSC17 Interval="300" Offset="0" Order="2" Input="HG9" Alias="" RedundantRecs="0" />
+            <WSC19 Interval="300" Offset="0" Order="1" Input="HG3" Alias="" RedundantRecs="0" />
+            <WSC20 Interval="900" Offset="0" Order="3" Input="TW3" Alias="" RedundantRecs="0" />
+          </WSC>
+        </SelfTimed>
+      </G6>
+    </Telem0>
+  </Telems>
+  <StationSetup StationName="02EBX13" StationDescription="BIG EST RIVER NEAR HUNTSVILLE (PROJECT)" StationLatitude="" StationLongitude="" StationElevation="" StationElevationUnits="m" TelemAVResume="0" TelemAVCutOff="0" TelemBVResume="0" TelemBVCutOff="0" VCutOff="10.8" VResume="11.5" DataPointMinimum="-9999999" DataPointMaximum="9999999" StationInlineEnabled="N">
+    <Advanced AutoFillMeasurementTimeEnabled="N" AutoFillPaddingSec="2">
+      <SDIPortSetup PortADelayEnabled="N" PortADelay="" PortBDelayEnabled="N" PortBDelay="" PortCDelayEnabled="N" PortCDelay="" PortDDelayEnabled="N" PortDDelay="" />
+      <GPSSyncSetup Source="Goes" Interval="86400" />
+    </Advanced>
+  </StationSetup>
+  <DataGraph StartDate="12/19/2022 14:22:00" EndDate="02/27/2023 14:22:00">
+    <Series0 SeriesName="WVX9" SeriesUnits="m/s" SeriesMax="1" SeriesMin="0" SeriesColor="1" />
+  </DataGraph>
+  <DataTable>
+    <ord21 ColWidth="33" />
+    <ord0 ColWidth="55" />
+    <ord1 ColWidth="55" />
+    <ord12 ColWidth="30" />
+    <ord22 ColWidth="39" />
+    <ord9 ColWidth="31" />
+    <ord2 ColWidth="34" />
+    <ord3 ColWidth="28" />
+    <ord4 ColWidth="24" />
+    <ord5 ColWidth="30" />
+    <ord6 ColWidth="23" />
+    <ord7 ColWidth="25" />
+    <ord8 ColWidth="29" />
+    <ord10 ColWidth="26" />
+    <ord11 ColWidth="22" />
+    <ord13 ColWidth="29" />
+    <ord14 ColWidth="33" />
+    <ord15 ColWidth="55" />
+    <ord16 ColWidth="55" />
+    <ord17 ColWidth="55" />
+    <ord18 ColWidth="55" />
+    <ord19 ColWidth="55" />
+    <ord20 ColWidth="55" />
+  </DataTable>
+  <CurrentCond RefreshEnabled="F" RefreshSeconds="0">
+    <HG9 />
+    <HG9_raw />
+    <TW9 />
+    <SS9 />
+    <WVX9 />
+    <YIP9 />
+    <YIR9 />
+    <ID9 />
+    <HD9 />
+    <YE9 />
+    <YSN9 />
+    <TA />
+    <XR />
+    <PA />
+    <VB />
+    <YF />
+    <YR />
+    <HG3 />
+  </CurrentCond>
+</XMLRoot>
