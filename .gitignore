@@ -3,8 +3,15 @@
 ################################################################################
 
 /dist
-/build/FTS_ConfigViewer_v2
 /__pycache__
 /build
 /bin
 /dist_v2_5
+changelog.txt
+version.txt
+user_manual.pdf
+user_manual.docx
+FTSConfigViewer_v2*
+FTS_Config_2.bat
+versioninfo.py
+webversion.txt
