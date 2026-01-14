@@ -1,5 +1,15 @@
 import pdfkit
 from lxml import etree
+import os
+import sys
+
+def resource_path(relative_path):
+    """
+    Get the absolute path to a resource, whether running as a script or as a PyInstaller bundle.
+    """
+    base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))  # _MEIPASS is defined by PyInstaller during runtime.
+    return os.path.join(base_path, relative_path)
+
 
 def xml_to_html(xml_path, xsl_path, output_html_path):
     """
@@ -39,7 +49,10 @@ def html_to_pdf(html_path, output_pdf_path):
             'margin-right': '5mm',
             'zoom': 1
             }
-        pdfkit.from_file(html_path, output_pdf_path, options=options)
+        wkhtmltopdf_path = resource_path("bin/wkhtmltopdf.exe")
+        config = pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_path)
+        
+        pdfkit.from_file(html_path, output_pdf_path, options=options, configuration=config)
         print(f"PDF successfully created: {output_pdf_path}")
     except Exception as e:
         print(f"Error converting HTML to PDF: {e}")
@@ -60,6 +73,10 @@ def xml_to_pdf(xml_path, xsl_path, pdf_path):
     # Step 2: Convert HTML to PDF
     html_to_pdf(generated_html_path, pdf_path)
 
+
+"""
+for testing purposes only
+
 # Example Usage
 if __name__ == "__main__":
     # Input XML and XSL files
@@ -71,3 +88,4 @@ if __name__ == "__main__":
 
     # Create PDF from XML and XSL
     xml_to_pdf(xml_file, xsl_file, pdf_file)
+"""

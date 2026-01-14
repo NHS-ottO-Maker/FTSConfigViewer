@@ -4,3 +4,7 @@
 
 /dist
 /build/FTS_ConfigViewer_v2
+/__pycache__
+/build
+/dist_v2_5
+/bin

@@ -698,7 +698,6 @@ section.versions
 				<td><xsl:value-of select="@Analog1Mode" /></td>
 				<td><xsl:value-of select="@Analog1Name" /></td>				
 				<td><xsl:value-of select="@Analog1Range" /></td>
-				<td rowspan="4"><a href="https://ftsinc.com/wp-content/uploads/2015/07/Axiom-Analog-Interface-Module.jpg" target="_blank"><img src="https://ftsinc.com/wp-content/uploads/2015/07/Axiom-Analog-Interface-Module.jpg" width="125" alt="FTS SDI-AM - please connect to the internet to see the photo"/></a></td>
 			</tr>
 			<tr>
 				<td>2</td>
