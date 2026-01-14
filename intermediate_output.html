@@ -1,0 +1,762 @@
+<html>
+  <head>
+    <style>
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border: 3px solid #CC66CC;
+}
+
+ 
+table {
+	border: 2px solid black;
+	
+	border-collapse: collapse;
+}
+
+table.station{
+	border: 1px solid white;
+
+}
+
+th {
+    font-size:1.1em;
+	text-align: center;
+	vertical-align: center;
+	background-color:#CDCDCD;
+	height:20px;
+	border-bottom: 1px solid black;
+	padding:7px;
+	
+}
+
+th.spanner
+ {
+    font-size:1.1em;
+	text-align: center;
+	vertical-align: center;
+	background-color:#CDCDCD;
+	height:20px;
+	border-bottom: 1px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	padding:7px;
+	
+}
+
+tr, td{
+	border-bottom: 1px solid black;
+	text-align: center;
+	padding: 5px;
+}
+tr:hover {background-color:#CCFF66;}
+
+td.station{
+	border: 1px solid white;
+	height: 25px;
+	
+	font-size: 1.75em;
+	font-weight: bold;
+	text-align: left;
+	
+}
+
+td.Command
+{
+	border-bottom: 1px solid black;
+	text-align: left;
+	padding: 5px;
+}
+
+
+h2{
+	font-size: 1.75em;
+	font-weight: bold;
+
+}
+
+h3{
+	font-size: 1.5em;
+	font-weight: bold;
+
+}
+
+
+
+section.station
+{
+  border-top: #FFFFFF;
+	border-bottom: #FFFFFF;
+	border-left:15px #CC66CC;
+	border-right: #FFFFFF;
+	border-style: solid;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+
+section.visitreport
+{
+  border-top: #FFFFFF;
+	border-bottom: #FFFFFF;
+	border-left:15px #AAAAAA;
+	border-right: #FFFFFF;
+	border-style: solid;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+
+section.telemetry
+{
+  border-top: #FFFFFF;
+	border-bottom: #FFFFFF;
+	border-left:15px #119911;
+	border-right: #FFFFFF;
+	border-style: solid;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+
+section.sensors{
+    border-top: #FFFFFF;
+	border-bottom: #FFFFFF;
+	border-left: 15px #0099CC;
+	border-right: #FFFFFF;
+	border-style: solid;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+section.processes
+{
+    border-top: #FFFFFF;
+	border-bottom: #FFFFFF;
+	border-left:15px #CCCC00;
+	border-right: #FFFFFF;
+	border-style: solid;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+section.log
+{
+    border-top: #FFFFFF;
+	border-bottom: #FFFFFF;
+	border-left:15px #8B4513;
+	border-right: #FFFFFF;
+	border-style: solid;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+
+
+section.versions
+{
+    border-top: #FFFFFF;
+	border-bottom: #FFFFFF;
+	border-left:15px #AA0000;
+	border-right: #FFFFFF;
+	border-style: solid;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+</style>
+  </head>
+  <body>
+    <div class="sticky">
+      <table class="station">
+        <tr>
+          <td class="station">Station Number:</td>
+          <td class="station">02EBX13</td>
+        </tr>
+        <tr>
+          <td class="station">Station Name:</td>
+          <td class="station">BIG EST RIVER NEAR HUNTSVILLE (PROJECT)</td>
+        </tr>
+      </table>
+    </div>
+    <section class="station">
+      <article>
+        <table>
+          <tr>
+            <th>Standard Time Zone</th>
+            <td>Eastern Standard Time</td>
+            <th>GMT Offset</th>
+            <td>-
+			05:00:00</td>
+          </tr>
+        </table>
+      </article>
+    </section>
+    <section class="telemetry">
+      <article class="content">
+        <h3 class="telemetry">Satellite Telemetry Summary<br/>Active Transmitter -
+		G6</h3>
+        <table>
+          <tr>
+            <th/>
+            <th/>
+            <th/>
+            <th/>
+            <th/>
+            <th colspan="8" class="spanner">Self Timed Transmissions</th>
+            <th colspan="4" class="spanner">Random Transmissions</th>
+            <th colspan="3" class="spanner">Power Settings dBm</th>
+          </tr>
+          <tr>
+            <th>Telem Type</th>
+            <th>Network</th>
+            <th>NesID</th>
+            <th>Standard</th>
+            <th>Format</th>
+            <th>Enabled</th>
+            <th>Interval</th>
+            <th>BitRate</th>
+            <th>1stTrans</th>
+            <th>Window</th>
+            <th>Chnl</th>
+            <th>Centering</th>
+            <th>Sat</th>
+            <th>Enabled</th>
+            <th>BitRate</th>
+            <th>Chnl</th>
+            <th>Repeat Cnt</th>
+            <th>100bps</th>
+            <th>300bps</th>
+            <th>1200bps</th>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>GOES</td>
+            <td>48307E44</td>
+            <td>CS2</td>
+            <td>WSC</td>
+            <td>Y</td>
+            <td>01:00:00</td>
+            <td>300</td>
+            <td>00:23:30</td>
+            <td>00:00:15</td>
+            <td>221</td>
+            <td>Y</td>
+            <td>EAST</td>
+            <td>N</td>
+            <td>300</td>
+            <td> </td>
+            <td>0</td>
+            <td>32</td>
+            <td>37</td>
+            <td>38</td>
+          </tr>
+        </table>
+        <h3>Message Information</h3>
+        <table>
+          <tr>
+            <th>Telem Type</th>
+            <th>Variable</th>
+            <th>Interval</th>
+            <th>Offset</th>
+            <th>Red. Recs (#)</th>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>SS9</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>YIP9</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>YIR9</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>ID9</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>YE9</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>YSN9</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>TA</td>
+            <td>00:15:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>XR</td>
+            <td>00:15:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>PA</td>
+            <td>00:15:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>VB</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>YF</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>YR</td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>WVX9</td>
+            <td>00:05:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>HG9</td>
+            <td>00:05:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>HG3</td>
+            <td>00:05:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>G6</td>
+            <td>TW3</td>
+            <td>00:15:00</td>
+            <td>00:00:00</td>
+            <td>0</td>
+          </tr>
+        </table>
+      </article>
+    </section>
+    <section class="sensors">
+      <article>
+        <h3>Sensors</h3>
+        <table>
+          <tr>
+            <th>Label</th>
+            <th>Type</th>
+            <th>Enabled</th>
+            <th>Port</th>
+            <th>Addr.</th>
+            <th>Units</th>
+            <th>Hardware ID</th>
+            <th>Commands</th>
+            <th>Interval</th>
+            <th>Offset</th>
+            <th>Burst Samples</th>
+            <th>Burst Time</th>
+            <th>Command Summaries</th>
+          </tr>
+          <tr>
+            <td>Battery</td>
+            <td>BatterySensor</td>
+            <td>Y</td>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td>NaNNaNNaN</td>
+            <td class="Command">			
+			Battery Voltage:VB<br/>
+			Battery Current:IBatt<br/>
+			Battery Temp:TBatt<br/>
+			Battery Temp Units:C</td>
+          </tr>
+          <tr>
+            <td>SDI</td>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td/>
+            <td>
+              <br/>
+            </td>
+            <td>
+              <br/>
+            </td>
+            <td>
+              <br/>
+            </td>
+            <td/>
+            <td>NaNNaNNaN</td>
+            <td class="Command">
+              <table width="100%" cellspacing="0.5">
+                <tr>
+                  <th>CMD</th>
+                  <th>Var Name</th>
+                  <th>Units</th>
+                  <th>Precision</th>
+                  <th>Offset</th>
+                  <th>FieldNum</th>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>TA</td>
+                  <td>Celsius</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>PA</td>
+                  <td>kPa</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>XR</td>
+                  <td>%</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>3</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>ATMOS</td>
+            <td>SDISensor</td>
+            <td>Y</td>
+            <td>B</td>
+            <td>0</td>
+            <td/>
+            <td>METER ATM14  </td>
+            <td>M<br/></td>
+            <td>00:15:00<br/></td>
+            <td>00:00:00<br/></td>
+            <td>0</td>
+            <td>00:00:00</td>
+            <td class="Command">
+              <table width="100%" cellspacing="0.5">
+                <tr>
+                  <th>CMD</th>
+                  <th>Var Name</th>
+                  <th>Units</th>
+                  <th>Precision</th>
+                  <th>Offset</th>
+                  <th>FieldNum</th>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>TA</td>
+                  <td>Celsius</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>PA</td>
+                  <td>kPa</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>XR_dec</td>
+                  <td/>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>3</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>HG3</td>
+            <td>StageSensor</td>
+            <td>Y</td>
+            <td>B</td>
+            <td>3</td>
+            <td/>
+            <td>OTTHACH PLS PS-453498 </td>
+            <td>M<br/></td>
+            <td>00:05:00<br/></td>
+            <td>00:04:30<br/></td>
+            <td>0</td>
+            <td>00:00:00</td>
+            <td class="Command">
+              <table width="100%" cellspacing="0.5">
+                <tr>
+                  <th>CMD</th>
+                  <th>Var Name</th>
+                  <th>Units</th>
+                  <th>Precision</th>
+                  <th>Offset</th>
+                  <th>FieldNum</th>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>HG3_raw</td>
+                  <td>m</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>TW3</td>
+                  <td>C</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>HG3</td>
+                  <td>m</td>
+                  <td>3</td>
+                  <td>4.2108</td>
+                  <td>1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>ADVM9</td>
+            <td>SDISensor</td>
+            <td>Y</td>
+            <td>A</td>
+            <td>9</td>
+            <td/>
+            <td>SonTek IQ IQ1842008 </td>
+            <td>M<br/>M2<br/>M1<br/></td>
+            <td>00:15:00<br/>00:15:00<br/>00:15:00<br/></td>
+            <td>00:00:00<br/>00:10:00<br/>00:05:00<br/></td>
+            <td>0</td>
+            <td>00:00:00</td>
+            <td class="Command">
+              <table width="100%" cellspacing="0.5">
+                <tr>
+                  <th>CMD</th>
+                  <th>Var Name</th>
+                  <th>Units</th>
+                  <th>Precision</th>
+                  <th>Offset</th>
+                  <th>FieldNum</th>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>TW9</td>
+                  <td>C</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>SS9</td>
+                  <td/>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>HG9_raw</td>
+                  <td>m</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>M2</td>
+                  <td>HD9</td>
+                  <td>m</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>M2</td>
+                  <td>YE9</td>
+                  <td>m</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>M2</td>
+                  <td>YSN9</td>
+                  <td>dBm</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>M1</td>
+                  <td>WVX9</td>
+                  <td>m/s</td>
+                  <td>3</td>
+                  <td>0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>M1</td>
+                  <td>YIP9</td>
+                  <td>degrees</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>M1</td>
+                  <td>YIR9</td>
+                  <td>degrees</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>M1</td>
+                  <td>ID9</td>
+                  <td/>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>9</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </article>
+    </section>
+    <section class="processes">
+      <article>
+        <h3>Processes</h3>
+        <table>
+          <tr>
+            <th>Process Name</th>
+            <th>Type</th>
+            <th>Interval</th>
+            <th>Offset</th>
+            <th>Equation</th>
+            <th>Precision</th>
+            <th>Units</th>
+            <th>Additional Info</th>
+          </tr>
+          <tr>
+            <td>XR</td>
+            <td>FuncProcess</td>
+            <td/>
+            <td/>
+            <td class="process">XR_dec*100</td>
+            <td>0</td>
+            <td>%</td>
+            <td class="process"/>
+          </tr>
+          <tr>
+            <td>HG9</td>
+            <td>FuncProcess</td>
+            <td/>
+            <td/>
+            <td class="process">HG9_raw-1.390</td>
+            <td>3</td>
+            <td>m</td>
+            <td class="process"/>
+          </tr>
+        </table>
+      </article>
+    </section>
+    <section class="log">
+      <article>
+        <h3>Log Intervals</h3>
+        <table>
+          <tr>
+            <th>Label</th>
+            <th>Variables</th>
+            <th>Interval</th>
+            <th>Offset</th>
+          </tr>
+          <tr>
+            <td>Logger3</td>
+            <td>VB<br/>YF<br/>YR<br/></td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+          </tr>
+          <tr>
+            <td>Logger1</td>
+            <td>SS9<br/>YIP9<br/>YIR9<br/>ID9<br/>YE9<br/>YSN9<br/>HD9<br/></td>
+            <td>01:00:00</td>
+            <td>00:00:00</td>
+          </tr>
+          <tr>
+            <td>Logger4</td>
+            <td>HG3<br/>HG9<br/></td>
+            <td>00:05:00</td>
+            <td>00:00:00</td>
+          </tr>
+          <tr>
+            <td>Logger2</td>
+            <td>TA<br/>XR<br/>PA<br/>TW9<br/>TW3<br/>WVX9<br/></td>
+            <td>00:15:00</td>
+            <td>00:00:00</td>
+          </tr>
+        </table>
+      </article>
+    </section>
+    <section class="versions">
+      <article>
+        <p> Water Survey of Canada - 	Style Sheet Version 2.3 - 2018-12-05</p>
+        <p>Created from: <div id="file"/> on <div id="curtime"/></p>
+        <script>		
+		document.getElementById("curtime").innerHTML = Date();
+		document.getElementById("file").innerHTML = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+	</script>
+      </article>
+    </section>
+  </body>
+</html>

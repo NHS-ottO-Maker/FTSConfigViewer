@@ -249,7 +249,7 @@ section.versions
 			<td><xsl:value-of select="//@Name"/></td>
 			
 			<th>GMT Offset</th>
-			<td>
+			<td>-
 			<!-- Convert the TimeZoneInfo Bias from minutes! into HH:MM:SS -->
 			<xsl:variable name="seconds" select="//@Bias*60" />
 
@@ -945,10 +945,8 @@ section.versions
 
 <section class="versions">
 <article>
-	
+	<p> Water Survey of Canada - 	Style Sheet Version 2.3 - 2018-12-05</p>
 	<p>Created from: <div id="file"></div> on <div id="curtime"></div></p>
-		
-	<p> Water Survey of Canada - 	Style Sheet Version 2.2 - 2018-12-05</p>
 	
 	<script>		
 		document.getElementById("curtime").innerHTML = Date();

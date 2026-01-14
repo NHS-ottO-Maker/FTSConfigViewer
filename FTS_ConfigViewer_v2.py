@@ -4,6 +4,10 @@
 # otto.bedard@canada.ca
 # Developed for Water Survey of Canada for ease of reading configuration files from FTS H1/H2 data loggers
 
+# Version History
+# v2.6 2024-06-12
+# updated to pdf output from .html output
+
 # v2.5 2020-12-04
 # changed local .xsl to github repository for FireFox fix and long term adaptability.
 
@@ -18,15 +22,16 @@ import os
 from ftplib import FTP
 from shutil import copy
 from appJar import gui
-
 import requests
+# Version 2.6 PDF generation
+import pdfkit
+from lxml import etree
 
-
+# Some global variables
 global evr_filename
 evr_filename = '0'
 global lp_filename
 lp_filename='0'
-
 
 # Exit Button Process
 def exit(btn):
@@ -44,18 +49,14 @@ def reset(btn):
     # Reset the options, and update the colours
     app.setButtonState("Load End Visit Report","disabled")
     app.setButtonState("View Summary","disabled")
-     
     app.setButtonState("Load Logger LP#.xml","active")
-
     app.setButtonFg("Load Logger LP#.xml","black")
     app.setButtonFg("Load End Visit Report","black")
     app.setButtonBg("Load Logger LP#.xml","whitesmoke")
     app.setButtonBg("Load End Visit Report","whitesmoke")
 
-
 # Check the LP# File to see if it is good
 def lp(btn):
-
 
     try:
         global evr_filename
@@ -68,7 +69,6 @@ def lp(btn):
         exists = os.path.isfile(lp_filename)
         
         if exists:
-            
 
             file = open(lp_filename,'r')
             print('File Opened')
@@ -92,7 +92,6 @@ def lp(btn):
             # Oh dear, they didn't load anything
             print("no file selected")
             app.infoBox("Information","Please select an FTS datalogger .xml configuration file.")   
-
 
     except:
         
@@ -147,8 +146,6 @@ def evr(btn):
             app.infoBox("Information","Please select an End Visit Report to use this feature.") 
             # Change the colour to red to indicate that they didn't load anything
             app.setButtonFg("Load End Visit Report","red")
-
-        
             
     except:
         # Something went wrong!
@@ -166,9 +163,7 @@ def evr(btn):
         app.setButtonState("Load Logger LP#.xml","disabled")
         app.setButtonState("Load End Visit Report","disabled")
 
-
-
-        # Through a pop up with an error
+        # Throw a pop up with an error
         app.errorBox("Error!","An error has occured in loading the file.\nPlease select Reset and start over.\n\nThanks")
 
 # Menu Processiong
@@ -192,8 +187,6 @@ def menuPress(item):
     elif item == "Check Version":
         # Try to go to GITHUB and get a web version for checking against
         try:
-
-
             # 2020-12-04 Remove the stylesheet checking, as it is now just on the web in GITHUB
             
             message_url = "https://raw.githubusercontent.com/theottomaker/FTSConfigViewer/master/webversion.txt"
@@ -229,7 +222,6 @@ def menuPress(item):
             else:
                 usermessage = usermessage + 'You are using the most current version of the main program \n\n'
 
-
             #if webstylever > curstylever:
                 # update to Style Sheet
             #    usermessage = usermessage + 'Stylesheet Update Recommended \n    - Please update from version ' + str(curstylever) + ' to version ' + str(webstylever) + '\n\n'
@@ -237,7 +229,6 @@ def menuPress(item):
             #    usermessage = usermessage + 'You are using the most current version of the stylesheet \n\n'
         
             usermessage = usermessage + "Please visit the WSC Atlassian Site for the most to date versions"
-
 
             print('Comparison complete')
             #print(mainupdate,styleupdate)
@@ -377,6 +368,12 @@ def process(btn):
     # Feedback
     print("Contents of newfile written!")
 
+    # Now, we need to convert the XML to PDF
+    pdf_output = newfilename[0:len(newfilename)-4] + ".pdf"
+    print("Creating PDF: " + pdf_output)
+    xml_to_pdf(newfilename,"C:\\Users\\BedardO\\OneDrive - EC-EC\\Documents\\source\\repos\\FTSConfigViewer\\FTSConfigViewer.xsl",pdf_output)
+    print("PDF Creation Complete!")
+    
     # 2020-12-04 We can remove this, as we are using a GITHUB RAW File
     # let's copy the style sheet to the correct folder
     # pathname = os.path.dirname(newfilename)+ '/FTSConfigViewer.xsl'
@@ -386,6 +383,66 @@ def process(btn):
     # open that file in the default program (web browser likely - hopefully!!!)
     print('Open new xml for viewing!')
     os.startfile(newfilename)
+
+def xml_to_html(xml_path, xsl_path, output_html_path):
+    """
+    Transform the XML using XSLT to produce a fully rendered HTML file.
+    """
+    try:
+        # Parse the XML and XSL files
+        xml = etree.parse(xml_path)
+        xsl = etree.parse(xsl_path)
+
+        # Perform the transformation
+        transform = etree.XSLT(xsl)
+        result_tree = transform(xml)
+
+        # Write the HTML output to a file
+        with open(output_html_path, "wb") as html_file:
+            html_file.write(etree.tostring(result_tree, pretty_print=True, encoding="UTF-8"))
+        
+        print(f"HTML successfully generated: {output_html_path}")
+        return output_html_path
+    except Exception as e:
+        print(f"Error transforming XML to HTML: {e}")
+        return None
+
+def html_to_pdf(html_path, output_pdf_path):
+    """
+    Convert the rendered HTML file to a PDF using wkhtmltopdf.
+    """
+    try:
+
+        options = {
+            'orientation': 'Landscape',
+            'page-size': 'Letter',
+            'margin-top': '5mm',
+            'margin-bottom': '5mm',
+            'margin-left': '5mm',
+            'margin-right': '5mm',
+            'zoom': 1
+            }
+        pdfkit.from_file(html_path, output_pdf_path, options=options)
+        print(f"PDF successfully created: {output_pdf_path}")
+    except Exception as e:
+        print(f"Error converting HTML to PDF: {e}")
+
+def xml_to_pdf(xml_path, xsl_path, pdf_path):
+    """
+    Full workflow: transform XML to HTML, then convert HTML to PDF.
+    """
+    # Intermediate HTML file path
+    html_path = "C:/temp/FTSViewer/Sample_Config.html"
+    
+    # Step 1: Convert XML to HTML
+    generated_html_path = xml_to_html(xml_path, xsl_path, html_path)
+    if not generated_html_path:
+        print("Failed to generate HTML from XML and XSL.")
+        return
+
+    # Step 2: Convert HTML to PDF
+    html_to_pdf(generated_html_path, pdf_path)
+
 
 # Start an APP instance and the settings
 app = gui("FTS Config Viewer")
@@ -409,9 +466,7 @@ app.addButton("Load Logger LP#.xml", lp)
 
 app.addButton("Load End Visit Report", evr)
 
-
 app.addLabel("Nothing2",' ')
-
 app.addButton("View Summary", process)
 app.addLabel("Nothing3",' ')
 
