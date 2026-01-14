@@ -7,11 +7,10 @@
 /build
 /bin
 /dist_v2_5
-changelog.txt
-version.txt
-user_manual.pdf
-user_manual.docx
-FTSConfigViewer_v2*
-FTS_Config_2.bat
-versioninfo.py
+*.py
+User_Manual*
 webversion.txt
+changelog.txt
+*.bat
+*v2.py
+*v2.spec
