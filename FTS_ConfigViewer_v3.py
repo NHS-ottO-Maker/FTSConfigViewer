@@ -23,10 +23,10 @@ import sys
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget,
     QVBoxLayout, QLabel, QPushButton, QMessageBox,
-    QFileDialog
+    QFileDialog, QAction
 )
-from PyQt5.QtGui import QPixmap, QFont, QIcon
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap, QFont, QIcon, QDesktopServices
+from PyQt5.QtCore import Qt, QUrl
 
 # V3 stuff
 import pdfkit
@@ -68,6 +68,7 @@ class MainWindow(QMainWindow):
         # Call the method to set up the UI layout
         self.setup_ui()
 
+
     # Method to set up the UI layout
     def setup_ui(self):
         # Central widget holds all UI components
@@ -106,6 +107,17 @@ class MainWindow(QMainWindow):
         # Set the layout
         central_widget.setLayout(layout)
 
+        # Create a menu bar
+        menubar = self.menuBar()
+
+        # Create "Help" menu
+        help_menu = menubar.addMenu("Help")
+
+        # Add "Online Help" action
+        help_action = QAction("Confluence", self)
+        help_action.triggered.connect(self.open_help_url)
+        help_menu.addAction(help_action)        
+
     # Helper method to create buttons
     def create_button(self, layout, text, function):
         """
@@ -115,6 +127,14 @@ class MainWindow(QMainWindow):
         button.setFont(QFont("Arial", 12))  # Customize button font/style
         button.clicked.connect(function)  # Connect button to function
         layout.addWidget(button)  # Add button to the layout
+
+    def open_help_url(self):
+        """
+        Open a web browser to display the program's help wiki.
+        """
+        url = QUrl("https://watersurveyofcanada.atlassian.net/wiki/spaces/WSCan/pages/616366098/FTS+Config+Viewer+Software")
+        if not QDesktopServices.openUrl(url):
+            QMessageBox.warning(self, "Error", f"Could not open {url.toString()}.")
 
     # load XML function
     def load_logger_xml(self):
