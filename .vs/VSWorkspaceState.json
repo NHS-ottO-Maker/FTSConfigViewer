@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\build",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\FTS_ConfigViewer_v2.py",
   "PreviewInSolutionExplorer": false
 }
